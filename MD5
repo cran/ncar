@@ -1,6 +1,6 @@
-9426e6bec86219306fb220041c867a89 *DESCRIPTION
+96dd42d3009373ba88a8236c4ca53305 *DESCRIPTION
 84dcc94da3adb52b53ae4fa38fe49e5d *LICENSE
-fd0dd64c1a1229ac215c677b824cab14 *NAMESPACE
+c3b1a15f2d7f398d61d9fa4ced05ec88 *NAMESPACE
 4b0c8c6548070e0f7db130010e768b66 *R/AUC.R
 b8ca40ea3d4f27b6a223c7b0d9b1594b *R/BestSlope.R
 370d506851a786c92b7e9b611e669203 *R/IndiNCA.R
@@ -12,10 +12,10 @@ c94f74b98439ae5357bf815b160c25e7 *R/Interpol.R
 cb9b1bb67cac36e959443a8928709ae9 *R/Round.R
 f31b50a9154ed3b912ffd063049f06d7 *R/Slope.R
 48541dd9c544c32806cb6bd7ef8889ad *R/data.R
-b10538e0d24ad6cbf5bbb3adbbcd5937 *R/runCDISC.R
-5f77d250f69b78b9db690b02a6904330 *R/sysdata.rda
+73e29577c66e7088a974502b555ff496 *R/runCDISC.R
+491219e488ef2af1e67585a64db62460 *R/sysdata.rda
 5f77d250f69b78b9db690b02a6904330 *data/RptCfg.rda
-daabfccaf8a80216cd20984cb9f62439 *inst/doc/ncar-manual.pdf
+2be2c0219c2834f408478949f3f31537 *inst/doc/ncar-manual.pdf
 29600643331cc9f559807dd72b257e7e *man/AUC.Rd
 e27c64b03890e60bf753ada61f74a9e1 *man/BestSlope.Rd
 a2941566e3e8f3e36b48874f6381bbad *man/IndiNCA.Rd
@@ -24,10 +24,10 @@ d0a260adfdb1b3a67b6cecf89894f738 *man/IntAUC.Rd
 517fd634e58eded4549017b126cf8152 *man/LinAUC.Rd
 b0f156295b2c4d0aa6a54200dcb07d1d *man/LogAUC.Rd
 3b8845a50605630dda88aba21fbbf059 *man/NCA.Rd
-3883d387841ed0d377367ec076cb7be7 *man/NonCompart_0.2.6-package.Rd
 bd5e1b7beba661aa058ef7ad4784a57f *man/Round.Rd
 a222fd07efa215c9ff0285839755c029 *man/RptCfg.Rd
 0e4005692b5d2670e388bf0866446414 *man/Slope.Rd
+3883d387841ed0d377367ec076cb7be7 *man/ncar_0.3.1-package.Rd
 e64b4024e71e30f7eb471f58de198c11 *man/runCDISC.Rd
 a827db7f0ee6478ccd434cdf13760ba8 *tests/Final_Parameters_Pivoted_Indometh_Linear.csv
 eb14c5321c2973dca87161e7b5096c09 *tests/Final_Parameters_Pivoted_Indometh_Linear_Infusion.csv
