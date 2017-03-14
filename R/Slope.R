@@ -1,27 +1,4 @@
-#' Get the Slope of regression log(y) ~ x
-#'
-#' It calculates the slope with linear regression of log(y) ~ x
-#'
-#' With time-concentration curve, you frequently need to estimate slope in
-#' log(concentration) ~ time. This function is usually called by
-#' \code{BestSlope} function and you seldom need to call this function
-#' directly.
-#'
-#' @param x vector values of independent variable, usually time
-#' @param y vector values of dependent variable, usually concentration
-#' @return \item{R2}{R-squared} \item{R2ADJ}{adjusted R-squared}
-#' \item{LAMZNPT}{number of points used for slope} \item{LAMZ}{negative of
-#' slope, lambda_z} \item{b0}{intercept of regression line}
-#' \item{CORRXY}{correlation of log(y) and x} \item{LAMZLL}{earliest x for
-#' lambda_z} \item{LAMZUL}{last x for lambda_z} \item{CLSTP}{predicted y value
-#' at last point, predicted concentration for the last time point}
-#' @seealso \code{\link{BestSlope}}
-#' @keywords slope
-#' @examples
-#' Slope(Indometh[Indometh$Subject==1, "time"],Indometh[Indometh$Subject==1, "conc"])
-#' @export Slope
-Slope <-
-function(x, y)
+Slope = function(x, y)
 {
   n = length(x)
   if (n != length(y) | !is.numeric(x) | !is.numeric(y)) stop("Bad Input!")
