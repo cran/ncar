@@ -1,4 +1,4 @@
-5c190b85d4931c918721b9ec3bfd42d5 *DESCRIPTION
+5c4c1edeb4335c004c88bd2c650e1b9f *DESCRIPTION
 fae673f58fb45bb5934b819480f889f9 *NAMESPACE
 63c3880e4c781fcd38e07efcb56c049d *R/AUC.R
 6813a64e9859426e9b59016134070a99 *R/BasicUtil.R
@@ -10,14 +10,14 @@ b3801e4d7de688494c7df667de11e74d *R/Interpol.R
 0e9c32a50b6e8507778a13c716bbbbbb *R/Round.R
 fa16a162086682c7e34393e5b84a9bac *R/Slope.R
 90adb862f123eb8f5e1549dbe221d453 *R/Unit.R
-1f59b2235e07c69459fe7b34e87b2709 *R/pdfNCA.R
-0837af4a716fbf72af8508e10e3572ce *R/rtfNCA.R
+c0b9e4622bbd48ab13327583eeff1923 *R/pdfNCA.R
+738d2027496a434ecae6d31f6ca26cc9 *R/rtfNCA.R
 d03c11e9468c7bc060948d8d08f217bf *R/sNCA.R
 a8a18d565a61ec2142e164d8ab9795e9 *R/sysdata.rda
-34c2c7e96ee4cba736f367c172988e7f *R/tabNCA.R
+54c5f95751ae60120068d6df01abb4a3 *R/tabNCA.R
 c9105d37a07d6704a886c68f0877c2c3 *R/txtNCA.R
-13f3a65cae29316ad2698906bdf845c3 *inst/NEWS.Rd
-a6db3d4e49fbe383199619007857d1dd *inst/doc/ncar-manual.pdf
+b34591c3f8c8a7ab9f6b29d02231427a *inst/NEWS.Rd
+bdcbea5aa7d05146ea38491c138cc988 *inst/doc/ncar-manual.pdf
 3e4060cb23d8028707aa66aa7a4b7335 *man/AUC.Rd
 dec892a88ffc7deac747029ca6601391 *man/BasicUtil.Rd
 8edc297ab4bd55006ea7dc448709f6ac *man/BestSlope.Rd
@@ -44,4 +44,4 @@ d65c46193b44ada04d83e49c1b0ef238 *tests/Final_Parameters_Pivoted_Indometh_Log.cs
 a1e9c2cd76b2dfd0f32825ee40f49102 *tests/Final_Parameters_Pivoted_Indometh_Log_Wrong_Extravascular.csv
 7f06db923eafbe759e603f74fbd8e6a1 *tests/Final_Parameters_Pivoted_Theoph_Linear.csv
 4161b04a1d32e2b074c2338a1d7f8f3b *tests/Final_Parameters_Pivoted_Theoph_Log.csv
-30464c73f222818e52dd6000104ac2fa *tests/Test.R
+f8ccdcefe57c45c94b94e70619f04e5b *tests/Test.R

@@ -25,6 +25,9 @@ Equal = function(Wres, Rres, Tol=0.001)
   return(IsSame)
 }
 
+Theoph[,"Subject"] = as.numeric(as.character(Theoph[,"Subject"]))
+Indometh[,"Subject"] = as.numeric(as.character(Indometh[,"Subject"]))
+
 Wres = read.csv("Final_Parameters_Pivoted_Theoph_Linear.csv")
 Rres = tabNCA(Theoph, "Subject", "Time", "conc", dose=320, concUnit="mg/L")
 if (!Equal(Wres, Rres)) stop("Test Failed!")

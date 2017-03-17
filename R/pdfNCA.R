@@ -11,7 +11,7 @@ pdfNCA = function(fileName="Temp-NCA.pdf", concData, colSubj="Subject", colTime=
   maxy = max(concData[,colConc])
   miny = min(concData[concData[,colConc] > 0,colConc])
 
-  IDs = sort(as.numeric(unique(concData[,colSubj])))
+  IDs = unique(concData[,colSubj])
   nID = length(IDs)
   Res = vector()
   for (i in 1:nID) {

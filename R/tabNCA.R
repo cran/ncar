@@ -1,7 +1,6 @@
 tabNCA = function(concData, colSubj="Subject", colTime="Time", colConc="conc", dose=0, adm="Extravascular", dur=0, doseUnit="mg", timeUnit="h", concUnit="ug/L", down="Linear", MW=0, returnNA=FALSE) 
 {
-  IDs = sort(as.character(unique(concData[,colSubj])))
-  IDs = sort(as.numeric(unique(concData[,colSubj])))
+  IDs = unique(concData[,colSubj])
   nID = length(IDs)
 
   Res = vector()
