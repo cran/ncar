@@ -5,7 +5,7 @@
 NCA Report Configuation Table
 }
 \description{
-Contains the names and order of colum of return table/text by \code{IndiNCA} and \code{NCA} functions 
+Contains the names and order of colum of return table/text in ouputs
 }
 \usage{RptCfg}
 \format{
@@ -24,8 +24,7 @@ Contains the names and order of colum of return table/text by \code{IndiNCA} and
   }
 }
 \details{
-This table should exist in NonCompart package.
-User can edit this table for shaping the report in one's own style. 
+This table should exist in this package.
 }
 
 \keyword{datasets}

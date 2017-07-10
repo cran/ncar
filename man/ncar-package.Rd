@@ -2,16 +2,15 @@
 \alias{ncar-package}
 \alias{ncar}
 \docType{package}
-\title{Noncompartmental Analysis for Pharmacokinetic Data for Reviewer}
+\title{Noncompartmental Analysis for Pharmacokinetic Report}
 \description{
-It conducts a noncompartmental analysis(NCA) as closely as possible to the most widely used commercial pharmacokinetic analysis software.
+It conducts a noncompartmental analysis (NCA) as closely as possible to the most widely used commercial pharmacokinetic analysis software.
 }
 \details{
 The main functions are
 \preformatted{
-NCA	     to perform NCA for many subjects.
-
-IndiNCA  to perform NCA for one subject.
+pdfNCA to produce PDF file format NCA.
+rtfNCA to produce rtf file format NCA.
 }
 }
 \author{Kyun-Seop Bae <k@acr.kr>}
@@ -28,13 +27,6 @@ IndiNCA  to perform NCA for one subject.
 \keyword{ NCA }
 \examples{
 # Theoph and Indometh data: dose in mg, conc in mg/L, time in h
-tabNCA(Theoph, dose=320, concUnit="mg/L")
-tabNCA(Indometh, colSubj="Subject", colTime="time", colConc="conc", dose=25,
-       adm="Infusion", dur=0.5, concUnit="mg/L")
-
-tabNCA(Theoph, dose=320, concUnit="mg/L")
-tabNCA(Indometh, colSubj="Subject", colTime="time", colConc="conc", dose=25, 
-       adm="Infusion", dur=0.5, concUnit="mg/L")
 
 # Output to PDF file
 #pdfNCA(fileName="NCA-Theoph.pdf", Theoph, colSubj="Subject", colTime="Time", 
@@ -49,15 +41,4 @@ tabNCA(Indometh, colSubj="Subject", colTime="time", colConc="conc", dose=25,
 #rtfNCA(fileName="NCA-Indometh.rtf", Indometh, colSubj="Subject", colTime="time", 
 #       colConc="conc", adm="Infusion", dur=0.5, dose=25, doseUnit="mg", 
 #       timeUnit="h", concUnit="mg/L")
-
-# For one subject
-iAUC = data.frame(Name=c("AUC[0-12h]","AUC[0-24h]"), Start=c(0,0), End=c(12,24)) ; iAUC
-
-x = Theoph[Theoph$Subject=="1","Time"]
-y = Theoph[Theoph$Subject=="1","conc"]
-
-sNCA(x, y, dose=320, doseUnit="mg", concUnit="mg/L", timeUnit="h", iAUC=iAUC)
-sNCA(x, y, dose=320, concUnit="mg/L", returnNA=FALSE, iAUC=iAUC)
-
-txtNCA(x, y, dose=320, doseUnit="mg", concUnit="mg/L", timeUnit="h", iAUC=iAUC)
 }
