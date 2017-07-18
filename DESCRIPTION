@@ -1,6 +1,6 @@
 Package: ncar
-Version: 0.3.5
-Date: 2017-07-10 KST
+Version: 0.3.6
+Date: 2017-07-18 KST
 Title: Noncompartmental Analysis for Pharmacokinetic Report
 Description: Conduct a noncompartmental analysis as closely as possible to the most widely used commercial software for pharmacokinetic analysis, i.e. 'Phoenix(R) WinNonlin(R)' <https://www.certara.com/software/pkpd-modeling-and-simulation/phoenix-winnonlin/>.
              Some features are
@@ -19,5 +19,5 @@ NeedsCompilation: no
 LazyLoad: yes
 Repository: CRAN
 URL: https://cran.r-project.org/package=ncar
-Packaged: 2017-07-10 04:03:04 UTC; K
-Date/Publication: 2017-07-10 05:03:19 UTC
+Packaged: 2017-07-18 11:41:33 UTC; K
+Date/Publication: 2017-07-18 12:46:30 UTC
