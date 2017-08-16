@@ -1,5 +1,4 @@
 \name{BasicUtil}
-\alias{Trim}
 \alias{toproper}
 \alias{Note}
 \alias{PrepPDF}

@@ -1,7 +1,5 @@
 #BasicUtil.R
 
-Trim  = function(x) gsub("^\\s+|\\s+$", "", x)
-
 toproper = function(string)
 {
   return(paste0(toupper(substr(string, 1, 1)), tolower(substr(string, 2, nchar(string)))))

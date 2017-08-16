@@ -1,4 +1,4 @@
-txtNCA = function(x, y, dose=0, adm="Extravascular", dur=0, doseUnit="mg", timeUnit="h", concUnit="ug/L", iAUC="", down="Linear", MW=0, returnNA=FALSE)
+txtNCA = function(x, y, dose=0, adm="Extravascular", dur=0, doseUnit="mg", timeUnit="h", concUnit="ug/L", iAUC="", down="Linear", MW=0)
 {
   if (!(is.numeric(x) & is.numeric(y) & is.numeric(dose) & is.numeric(dur) & is.character(adm) & is.character(down))) stop("Check input types!")
 
@@ -49,7 +49,7 @@ txtNCA = function(x, y, dose=0, adm="Extravascular", dur=0, doseUnit="mg", timeU
 
   tabAUC = AUC(x3, y3, down=down)
   
-  Res = sNCA(x=x, y=y, dose=dose, adm=adm, dur=dur, doseUnit=doseUnit, timeUnit=timeUnit, concUnit=concUnit, iAUC=iAUC, down=down, MW=MW, returnNA=returnNA)
+  Res = sNCA(x=x, y=y, dose=dose, adm=adm, dur=dur, doseUnit=doseUnit, timeUnit=timeUnit, concUnit=concUnit, iAUC=iAUC, down=down, MW=MW)
   
 # Begin Making Summary Table
   if (!is.na(Res["LAMZ"])) {
@@ -83,7 +83,7 @@ txtNCA = function(x, y, dose=0, adm="Extravascular", dur=0, doseUnit="mg", timeU
   else { Adm = "Extravascular" }
   Result[cLineNo] = paste("Drug Administration:", Adm) ; cLineNo = cLineNo + 1
   Result[cLineNo] = paste("Observation count excluding trailing zero:", length(x0)) ; cLineNo = cLineNo + 1
-  Result[cLineNo] = paste("dose at time 0:", paste(dose, doseUnit)) ; cLineNo = cLineNo + 1
+  Result[cLineNo] = paste("Dose at time 0:", paste(dose, doseUnit)) ; cLineNo = cLineNo + 1
   if (adm == "Infusion") {
     Result[cLineNo] = paste("Length of Infusion:", dur) ; cLineNo = cLineNo + 1
   }

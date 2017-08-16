@@ -19,7 +19,7 @@ pdfNCA = function(fileName="Temp-NCA.pdf", concData, colSubj="Subject", colTime=
     x = concData[concData[,colSubj]==cID, colTime]
     y = concData[concData[,colSubj]==cID, colConc]
     tabRes = sNCA(x, y, dose=dose, adm=adm, dur=dur, doseUnit=doseUnit, timeUnit=timeUnit, concUnit=concUnit, down=down, MW=MW)
-    tRes = txtNCA(x, y, dose=dose, adm=adm, dur=dur, doseUnit=doseUnit, timeUnit=timeUnit, concUnit=concUnit, down=down, MW=MW, returnNA=FALSE)
+    tRes = txtNCA(x, y, dose=dose, adm=adm, dur=dur, doseUnit=doseUnit, timeUnit=timeUnit, concUnit=concUnit, down=down, MW=MW)
     Res = c(Res, tRes)
 
     AddPage(Header1=paste("Subject ID =", cID))

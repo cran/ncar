@@ -4,7 +4,7 @@
 \description{This is the text form output.}
 \usage{
 txtNCA(x, y, dose = 0, adm = "Extravascular", dur = 0, doseUnit = "mg", timeUnit = "h", 
-       concUnit = "ug/L", iAUC = "", down="Linear", MW = 0, returnNA = FALSE)
+       concUnit = "ug/L", iAUC = "", down="Linear", MW = 0)
 }
 \arguments{
   \item{x}{usually time}
@@ -18,7 +18,6 @@ txtNCA(x, y, dose = 0, adm = "Extravascular", dur = 0, doseUnit = "mg", timeUnit
   \item{iAUC}{interval AUCs to calculate}
   \item{down}{either of \code{"Linear"} or \code{"Log"} to indicate the way to calculate AUC and AUMC}
   \item{MW}{molecular weight of the drug}
-  \item{returnNA}{if \code{returnNA} is \code{TRUE}, it returns NA values also.}
 }
 \value{
   \item{CMAX}{maximum concentration, Cmax}
@@ -90,7 +89,7 @@ Res = vector()
 for (i in 1:nID) {
   tRes = txtNCA(Theoph[Theoph[,"Subject"]==IDs[i],"Time"], 
                 Theoph[Theoph[,"Subject"]==IDs[i],"conc"], 
-                dose=320, concUnit="mg/L", returnNA=FALSE)
+                dose=320, concUnit="mg/L")
   tRes = c(paste("ID =", IDs[i]), tRes, "")
   Res = c(Res, tRes)
 }

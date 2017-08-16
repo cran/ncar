@@ -1,5 +1,10 @@
 \name{NEWS}
 \title{News for Package \pkg{ncar}}
+\section{Changes in version 0.3.7 (2017-08-16)}{
+  \itemize{
+    \item{\pkg{ncar} to be compatible with NonCompart_0.3.3.}
+  }
+}
 \section{Changes in version 0.3.6 (2017-07-18)}{
   \itemize{
     \item{\pkg{ncar} A bug in C0 calcuation of IV bolus case was fixed.}
