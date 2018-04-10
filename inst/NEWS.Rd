@@ -1,5 +1,10 @@
 \name{NEWS}
 \title{News for Package \pkg{ncar}}
+\section{Changes in version 0.3.8 (2018-04-10)}{
+  \itemize{
+    \item{Errata in manual corrected.}
+  }
+}
 \section{Changes in version 0.3.7 (2017-08-16)}{
   \itemize{
     \item{\pkg{ncar} to be compatible with NonCompart_0.3.3.}

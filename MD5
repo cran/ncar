@@ -1,4 +1,4 @@
-1ac6d0a26b4b73538280ae9c3962e618 *DESCRIPTION
+ef8db050facea4d5bb433483e0e05368 *DESCRIPTION
 6741ffa9d27d4f963109e55ab51de7ec *NAMESPACE
 02644756736e846dbfd43d85a731c0bb *R/BasicUtil.R
 0e9c32a50b6e8507778a13c716bbbbbb *R/Round.R
@@ -6,8 +6,8 @@ a53c0f5cc0d9a6400e39518fb11dd1f9 *R/pdfNCA.R
 4f092aa956b39019382014ddcfe65728 *R/rtfNCA.R
 a8a18d565a61ec2142e164d8ab9795e9 *R/sysdata.rda
 0fc12faeb41c1cfd7d9749be67e5fa89 *R/txtNCA.R
-8753d4e7bedbbba0b7fb54f870d62599 *inst/NEWS.Rd
-7df0965d0b82c815633adac0ff3bdcef *inst/doc/ncar-manual.pdf
+427e8254d7f376ad09f4374bafad0ff6 *inst/NEWS.Rd
+adc5cfd846f37d89e2af26d9a64bb6ae *inst/doc/ncar-manual.pdf
 3cd1f00857aa883eb77ef0f43d581e92 *man/BasicUtil.Rd
 0230f2f2aeb33548a3edcd654f7843fd *man/Round.Rd
 baebda100ff925f877391bf4b9935619 *man/RptCfg.Rd
