@@ -1,5 +1,10 @@
 \name{NEWS}
 \title{News for Package \pkg{ncar}}
+\section{Changes in version 0.3.9 (2018-05-10)}{
+  \itemize{
+    \item{Calling twice for terminal slope is corrected.}
+  }
+}
 \section{Changes in version 0.3.8 (2018-04-10)}{
   \itemize{
     \item{Errata in manual corrected.}
