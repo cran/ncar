@@ -77,7 +77,7 @@ Res2Txt = function(ResNCA, x, y, dose=0, adm="Extravascular", dur=0, doseUnit="m
   Result[cLineNo] = paste0("                       Package version ", packageVersion("ncar"), " (", packageDescription("ncar")$Date, ")") ; cLineNo = cLineNo + 1
   Result[cLineNo] = paste("                         ", version$version.string) ; cLineNo = cLineNo + 1
   Result[cLineNo] = "" ; cLineNo = cLineNo + 1
-  Result[cLineNo] = paste("Date and Time:", Sys.time(), Sys.timezone(location=FALSE)) ; cLineNo = cLineNo + 1
+  Result[cLineNo] = paste("Date and Time:", Sys.time(), Sys.timezone()) ; cLineNo = cLineNo + 1
   Result[cLineNo] = "" ; cLineNo = cLineNo + 1
   Result[cLineNo] = "Calculation Setting" ; cLineNo = cLineNo + 1
   Result[cLineNo] = "-------------------" ; cLineNo = cLineNo + 1

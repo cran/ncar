@@ -1,5 +1,10 @@
 \name{NEWS}
 \title{News for Package \pkg{ncar}}
+\section{Changes in version 0.4.0 (2018-06-20)}{
+  \itemize{
+    \item{Deprecated option in \code{Sys.timezone()}. is removed.}
+  }
+}
 \section{Changes in version 0.3.9 (2018-05-10)}{
   \itemize{
     \item{Calling twice for terminal slope is corrected.}
