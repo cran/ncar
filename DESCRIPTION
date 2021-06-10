@@ -1,6 +1,6 @@
 Package: ncar
-Version: 0.4.2
-Date: 2019-09-27 KST
+Version: 0.4.3
+Date: 2021-06-11 KST
 Title: Noncompartmental Analysis for Pharmacokinetic Report
 Description: Conduct a noncompartmental analysis with industrial strength.
              Some features are
@@ -19,5 +19,5 @@ NeedsCompilation: no
 LazyLoad: yes
 Repository: CRAN
 URL: https://cran.r-project.org/package=ncar
-Packaged: 2019-09-27 13:37:33 UTC; K
-Date/Publication: 2019-09-27 14:00:02 UTC
+Packaged: 2021-06-10 16:01:32 UTC; K
+Date/Publication: 2021-06-10 16:20:06 UTC

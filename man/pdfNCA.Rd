@@ -5,7 +5,7 @@
 \usage{
 pdfNCA(fileName = "Temp-NCA.pdf", concData, key = "Subject", colTime = "Time", 
        colConc = "conc", dose = 0, adm = "Extravascular", dur = 0, doseUnit = "mg", 
-       timeUnit = "h", concUnit = "ug/L", down="Linear", R2ADJ = 0, MW = 0)
+       timeUnit = "h", concUnit = "ug/L", down="Linear", R2ADJ = 0, MW = 0, iAUC)
 }
 \arguments{
   \item{fileName}{file name to save}
@@ -22,6 +22,7 @@ pdfNCA(fileName = "Temp-NCA.pdf", concData, key = "Subject", colTime = "Time",
   \item{down}{either of \code{"Linear"} or \code{"Log"} to indicate the way to calculate AUC and AUMC}
   \item{R2ADJ}{Minimum adjusted R-square value to determine terminal slope automatically}
   \item{MW}{molecular weight of drug}
+  \item{iAUC}{interval AUC information in a dataframe with "Name", "Start", and "End" columns}
 }
 \value{
   \item{CMAX}{maximum concentration, Cmax}

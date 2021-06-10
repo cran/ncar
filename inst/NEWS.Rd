@@ -1,5 +1,10 @@
 \name{NEWS}
 \title{News for Package \pkg{ncar}}
+\section{Changes in version 0.4.3 (2021-06-11)}{
+  \itemize{
+    \item{Handles NA better with less error in the plot.}
+  }
+}
 \section{Changes in version 0.4.2 (2018-09-27)}{
   \itemize{
     \item{Some sentences are revised.}

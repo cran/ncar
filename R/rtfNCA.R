@@ -1,4 +1,4 @@
-rtfNCA = function(fileName="Temp-NCA.rtf", concData, key = "Subject", colTime="Time", colConc="conc", dose=0, adm="Extravascular", dur=0, doseUnit="mg", timeUnit="h", concUnit="ug/L", down="Linear", R2ADJ=0, MW=0)
+rtfNCA = function(fileName="Temp-NCA.rtf", concData, key = "Subject", colTime="Time", colConc="conc", dose=0, adm="Extravascular", dur=0, doseUnit="mg", timeUnit="h", concUnit="ug/L", down="Linear", R2ADJ=0, MW=0, iAUC)
 {
   rtf = RTF(fileName)
   addHeader(rtf, title="Individual Noncompartmental Analysis Result")
@@ -7,9 +7,9 @@ rtfNCA = function(fileName="Temp-NCA.rtf", concData, key = "Subject", colTime="T
   addTOC(rtf)
   setFontSize(rtf, font.size=10)
 
-  maxx = max(concData[,colTime])
-  maxy = max(concData[,colConc])
-  miny = min(concData[concData[,colConc]>0, colConc])
+  maxx = max(concData[,colTime], na.rm=TRUE)
+  maxy = max(concData[,colConc], na.rm=TRUE)
+  miny = min(concData[concData[,colConc]>0, colConc], na.rm=TRUE)
 
   nKey = length(key)
   IDs = unique(as.data.frame(concData[,key], ncol=nKey))
@@ -36,7 +36,7 @@ rtfNCA = function(fileName="Temp-NCA.rtf", concData, key = "Subject", colTime="T
     if (nrow(tData) > 0) {
       x = tData[,colTime]
       y = tData[,colConc]
-      tabRes = sNCA(x, y, dose=dose[i], adm=adm, dur=dur, doseUnit=doseUnit, timeUnit=timeUnit, concUnit=concUnit, down=down, R2ADJ=R2ADJ, MW=MW)
+      tabRes = sNCA(x, y, dose=dose[i], adm=adm, dur=dur, doseUnit=doseUnit, timeUnit=timeUnit, concUnit=concUnit, down=down, R2ADJ=R2ADJ, MW=MW, iAUC=iAUC)
       txtRes = Res2Txt(tabRes, x, y, dose=dose[i], adm=adm, dur=dur, doseUnit=doseUnit, down=down)
       Res = c(Res, txtRes)
 
@@ -44,12 +44,15 @@ rtfNCA = function(fileName="Temp-NCA.rtf", concData, key = "Subject", colTime="T
       addHeader(rtf, strHeader, TOC.level=1)
       for (j in 1:length(txtRes)) addParagraph(rtf, txtRes[j])
 
+      x0 = x[!is.na(y) & y > 0]
+      y0 = y[!is.na(y) & y > 0]
+
       addPageBreak(rtf)
       addHeader(rtf, strHeader)
-      addPlot(rtf, plot.fun=plot, width=6, height=4, res=300, x=x, y=y, type="b", cex=0.7,
+      addPlot(rtf, plot.fun=plot, width=6, height=4, res=300, x=x0, y=y0, type="b", cex=0.7,
               xlim=c(0,maxx), ylim=c(0,maxy),
               xlab=paste0("Time (", timeUnit, ")"), ylab=paste0("Concentration (", concUnit, ")"))
-      addPlot(rtf, plot.fun=Plot4rtf, width=6, height=4, res=300, x=x, y=y, type="b", cex=0.7,
+      addPlot(rtf, plot.fun=Plot4rtf, width=6, height=4, res=300, x=x0, y=y0, type="b", cex=0.7,
               xlim=c(0, maxx), ylim=c(miny, maxy),
               xlab=paste0("Time (", timeUnit, ")"), ylab=paste0("Concentration (log interval) (", concUnit, ")"), tabRes=tabRes)
     }

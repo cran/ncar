@@ -7,8 +7,8 @@ Res2Txt = function(ResNCA, x, y, dose=0, adm="Extravascular", dur=0, doseUnit="m
 
   if (length(y[y > 0]) < 3) return("Too few non-zero points for NCA")
 
-  adm = UT(adm)
-  down = UT(down)
+  adm = toupper(trimws(adm))
+  down = toupper(trimws(down))
   if (adm == "INFUSION" & !(dur > 0)) stop("Infusion mode should have dur larger than 0!")
 
   NApoints = is.na(x) | is.na(y)
@@ -81,9 +81,9 @@ Res2Txt = function(ResNCA, x, y, dose=0, adm="Extravascular", dur=0, doseUnit="m
   Result[cLineNo] = "" ; cLineNo = cLineNo + 1
   Result[cLineNo] = "Calculation Setting" ; cLineNo = cLineNo + 1
   Result[cLineNo] = "-------------------" ; cLineNo = cLineNo + 1
-  if (adm == "BOLUS") { Adm = "Bolus IV" }
-  else if (adm == "INFUSION") { Adm = "Constant Infusion" }
-  else { Adm = "Extravascular" }
+  if (adm == "BOLUS") { Adm = "Bolus IV"
+  } else if (adm == "INFUSION") { Adm = "Constant Infusion"
+  } else { Adm = "Extravascular" }
   Result[cLineNo] = paste("Drug Administration:", Adm) ; cLineNo = cLineNo + 1
   Result[cLineNo] = paste("Observation count excluding trailing zero:", length(x0)) ; cLineNo = cLineNo + 1
   Result[cLineNo] = paste("Dose at time 0:", paste(dose, doseUnit)) ; cLineNo = cLineNo + 1
@@ -134,6 +134,7 @@ Res2Txt = function(ResNCA, x, y, dose=0, adm="Extravascular", dur=0, doseUnit="m
   for (i in 1:length(RetNames)) {
     if (RetNames[i] != "b0" & !is.na(Res[RetNames[i]])) {
       SYNO = RptCfg[RptCfg$PPTESTCD==RetNames[i], "SYNONYM"]
+      if (length(SYNO) == 0) SYNO = "Interval AUC"
       if (RetNames[i] == "LAMZNPT") {
         Result[cLineNo] = paste(sprintf("%-10s", RetNames[i]), sprintf("%-40s", SYNO), sprintf("%8d", Round(Res[RetNames[i]], 4))) ; cLineNo = cLineNo + 1
       } else {
