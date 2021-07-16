@@ -1,5 +1,10 @@
 \name{NEWS}
 \title{News for Package \pkg{ncar}}
+\section{Changes in version 0.4.4 (2021-07-09)}{
+  \itemize{
+    \item{\code{mayExcludeLast} option added to pdfNCA, rtfNCA, txtNCA. This option works with NonCompart 0.4.9 or later.}
+  }
+}
 \section{Changes in version 0.4.3 (2021-06-11)}{
   \itemize{
     \item{Handles NA better with less error in the plot.}

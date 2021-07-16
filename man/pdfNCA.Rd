@@ -5,7 +5,8 @@
 \usage{
 pdfNCA(fileName = "Temp-NCA.pdf", concData, key = "Subject", colTime = "Time", 
        colConc = "conc", dose = 0, adm = "Extravascular", dur = 0, doseUnit = "mg", 
-       timeUnit = "h", concUnit = "ug/L", down="Linear", R2ADJ = 0, MW = 0, iAUC)
+       timeUnit = "h", concUnit = "ug/L", down="Linear", R2ADJ = 0, MW = 0, 
+       iAUC = "", excludeDelta = 1)
 }
 \arguments{
   \item{fileName}{file name to save}
@@ -23,6 +24,7 @@ pdfNCA(fileName = "Temp-NCA.pdf", concData, key = "Subject", colTime = "Time",
   \item{R2ADJ}{Minimum adjusted R-square value to determine terminal slope automatically}
   \item{MW}{molecular weight of drug}
   \item{iAUC}{interval AUC information in a dataframe with "Name", "Start", and "End" columns}
+  \item{excludeDelta}{Improvement of R2ADJ larger than this value could exclude the last point. Default value 1 is for the compatibility with other software. Author recommends to use \code{excludeDelta} option with about 0.3.}
 }
 \value{
   \item{CMAX}{maximum concentration, Cmax}
