@@ -1,5 +1,10 @@
 \name{NEWS}
 \title{News for Package \pkg{ncar}}
+\section{Changes in version 0.4.5 (2022-02-23)}{
+  \itemize{
+    \item{Problem with tbl_df in pdfNCA and rtfNCA function is fixed.}
+  }
+}
 \section{Changes in version 0.4.4 (2021-07-09)}{
   \itemize{
     \item{\code{mayExcludeLast} option added to pdfNCA, rtfNCA, txtNCA. This option works with NonCompart 0.4.9 or later.}

@@ -1,5 +1,6 @@
 pdfNCA = function(fileName="Temp-NCA.pdf", concData, key = "Subject", colTime="Time", colConc="conc", dose=0, adm="Extravascular", dur=0, doseUnit="mg", timeUnit="h", concUnit="ug/L", down="Linear", R2ADJ=0, MW=0, iAUC="", excludeDelta=1)
 {
+  class(concData) = "data.frame"
   defPar = par(no.readonly=TRUE)
 
   PrepPDF(fileName)

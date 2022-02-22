@@ -1,5 +1,6 @@
 rtfNCA = function(fileName="Temp-NCA.rtf", concData, key = "Subject", colTime="Time", colConc="conc", dose=0, adm="Extravascular", dur=0, doseUnit="mg", timeUnit="h", concUnit="ug/L", down="Linear", R2ADJ=0, MW=0, iAUC="", excludeDelta=1)
 {
+  class(concData) = "data.frame"
   rtf = RTF(fileName)
   addHeader(rtf, title="Individual Noncompartmental Analysis Result")
   addNewLine(rtf)
