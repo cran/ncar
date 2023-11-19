@@ -1,5 +1,10 @@
 \name{NEWS}
 \title{News for Package \pkg{ncar}}
+\section{Changes in version 0.5.0 (2023-11-11)}{
+  \itemize{
+    \item{SS option for steady-state added in txtNCA, pdfNCA and rtfNCA.}
+  }
+}
 \section{Changes in version 0.4.5 (2022-02-23)}{
   \itemize{
     \item{Problem with tbl_df in pdfNCA and rtfNCA function is fixed.}

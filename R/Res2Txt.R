@@ -98,7 +98,7 @@ Res2Txt = function(ResNCA, x, y, dose=0, adm="Extravascular", dur=0, doseUnit="m
     Result[cLineNo] = paste("AUC Calculation Method: Unknown") ; cLineNo = cLineNo + 1
   }
   Result[cLineNo] = "Weighting for lambda z: Uniform (Ordinary Least Square, OLS)" ; cLineNo = cLineNo + 1
-  Result[cLineNo] = "Lambda z selection criterion: Heighest adjusted R-squared value with precision=1e-4" ; cLineNo = cLineNo + 1
+  Result[cLineNo] = "Lambda z selection criterion: Highest adjusted R-squared value with precision=1e-4" ; cLineNo = cLineNo + 1
   Result[cLineNo] = "" ; cLineNo = cLineNo + 1
   Result[cLineNo] = "" ; cLineNo = cLineNo + 1
   Result[cLineNo] = "Fitting, AUC, AUMC Result" ; cLineNo = cLineNo + 1
