@@ -14,9 +14,9 @@ pdfNCA(fileName = "Temp-NCA.pdf", concData, key = "Subject", colTime = "Time",
   \item{key}{column names of concData to be shown in the output table}
   \item{colTime}{column name for time}
   \item{colConc}{column name for concentration}
-  \item{dose}{administered dose}
+  \item{dose}{administered dose, a scalar or a vector}
   \item{adm}{one of \code{"Bolus"} or \code{"Infusion"} or \code{"Extravascular"} to indicate drug administration mode}
-  \item{dur}{duration of infusion}
+  \item{dur}{duration of infusion, a scalar or a vector}
   \item{doseUnit}{unit of dose}
   \item{timeUnit}{unit of time}
   \item{concUnit}{unit of concentration}

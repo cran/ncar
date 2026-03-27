@@ -56,8 +56,8 @@ Res2Txt = function(ResNCA, x, y, dose=0, adm="Extravascular", dur=0, doseUnit="m
 
 # Begin Making Summary Table
   if (!is.na(Res["LAMZ"])) {
-    iL = which(x3==Res["LAMZLL"])
-    iU = which(x3==Res["LAMZUL"])
+    iL = which(x3 == Res["LAMZLL"])
+    iU = which(x3 == Res["LAMZUL"])
     xr0 = x3[iL:iU]
     yr0 = y3[iL:iU]
     ypr = exp(Res["b0"] - Res["LAMZ"]*xr0)
@@ -66,7 +66,7 @@ Res2Txt = function(ResNCA, x, y, dose=0, adm="Extravascular", dur=0, doseUnit="m
     iL = 0
     iU = 0
     ypr = NA
-    ype = NA
+    yre = NA
   }
  # End Making Summary Table
   DateTime = strsplit(as.character(Sys.time())," ")[[1]]

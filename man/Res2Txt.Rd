@@ -8,11 +8,11 @@ Res2Txt(ResNCA, x, y, dose = 0, adm = "Extravascular", dur = 0, doseUnit = "mg",
 }
 \arguments{
   \item{ResNCA}{Output table from \code{sNCA}}
-  \item{x}{usually time}
-  \item{y}{usually concentration}
-  \item{dose}{given amount}
+  \item{x}{usually time, a vector}
+  \item{y}{usually concentration, a vector}
+  \item{dose}{given amount, a scalar}
   \item{adm}{one of \code{"Bolus"} or \code{"Infusion"} or \code{"Extravascular"} to indicate drug administration mode}
-  \item{dur}{duration of infusion}
+  \item{dur}{duration of infusion, a scalar}
   \item{doseUnit}{unit of dose}
   \item{down}{either of \code{"Linear"} or \code{"Log"} to indicate the way to calculate AUC and AUMC}
 }

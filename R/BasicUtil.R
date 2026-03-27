@@ -46,7 +46,7 @@ Text1 = function(Row, Col, Text, Cex=0.8)
   text(Col - 1, 2*Row - 1, Text, cex=Cex, offset=0)
 }
 
-TextM = function(MTxt, StartRow=0, Cex=0.8, Header1="", Header2="", Header3="", Footer2="", Footer1="", Footer3="", PrintRowNum=FALSE)
+TextM = function(MTxt, StartRow=0, Cex=0.8, Header1="", Header2="", Header3="", Footer1="", Footer2="", Footer3="", PrintRowNum=FALSE)
 {
   if (Cex < 0.1 | Cex > 1.2) stop("Too small or too large cex!")
   nRow = trunc(155 - 125*Cex)

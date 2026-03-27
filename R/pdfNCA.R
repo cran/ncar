@@ -11,18 +11,24 @@ pdfNCA = function(fileName="Temp-NCA.pdf", concData, key = "Subject",
   AddPage()
   Text1(1, 1, "Individual Noncompartmental Analysis Result", Cex=1.2)
 
-  maxx = max(concData[,colTime], na.rm=TRUE)
-  maxy = max(concData[,colConc], na.rm=TRUE)
-  miny = min(concData[concData[,colConc]>0, colConc], na.rm=TRUE)
+  maxx = max(concData[, colTime], na.rm=TRUE)
+  maxy = max(concData[, colConc], na.rm=TRUE)
+  miny = min(concData[concData[, colConc] > 0, colConc], na.rm=TRUE)
 
   nKey = length(key)
-  IDs = unique(as.data.frame(concData[,key], ncol=nKey))
+  IDs = unique(as.data.frame(concData[, key], ncol=nKey))
   nID = nrow(IDs)
 
   if (length(dose) == 1) {
     dose = rep(dose, nID)
   } else if (length(dose) != nID) {
     stop("Count of dose does not match with number of NCAs!")
+  }
+
+  if (length(dur) == 1) {
+    dur = rep(dur, nID)
+  } else if (length(dur) != nID) {
+    stop("Count of dur does not match with number of NCAs!")
   }
 
   Res = vector()
@@ -38,11 +44,11 @@ pdfNCA = function(fileName="Temp-NCA.pdf", concData, key = "Subject",
     strCond = paste0(strCond, ",]")
     tData = eval(parse(text=strCond))
     if (nrow(tData) > 0) {
-      x = tData[,colTime]
-      y = tData[,colConc]
-      tabRes = sNCA(x, y, dose=dose[i], adm=adm, dur=dur, doseUnit=doseUnit, timeUnit=timeUnit, concUnit=concUnit, down=down, R2ADJ=R2ADJ, MW=MW, SS=SS, iAUC=iAUC, Keystring=strHeader, excludeDelta=excludeDelta)
+      x = tData[, colTime]
+      y = tData[, colConc]
+      tabRes = sNCA(x, y, dose=dose[i], adm=adm, dur=dur[i], doseUnit=doseUnit, timeUnit=timeUnit, concUnit=concUnit, down=down, R2ADJ=R2ADJ, MW=MW, SS=SS, iAUC=iAUC, Keystring=strHeader, excludeDelta=excludeDelta)
       UsedPoints = attr(tabRes, "UsedPoints")
-      txtRes = Res2Txt(tabRes, x, y, dose=dose[i], adm=adm, dur=dur, doseUnit=doseUnit, down=down)
+      txtRes = Res2Txt(tabRes, x, y, dose=dose[i], adm=adm, dur=dur[i], doseUnit=doseUnit, down=down)
       Res = c(Res, txtRes)
 
       AddPage(Header1=strHeader)

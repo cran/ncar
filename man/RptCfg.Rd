@@ -2,10 +2,10 @@
 \alias{RptCfg}
 \docType{data}
 \title{
-NCA Report Configuation Table
+NCA Report Configuration Table
 }
 \description{
-Contains the names and order of colum of return table/text in ouputs
+Contains the names and order of column of return table/text in outputs
 }
 \usage{RptCfg}
 \format{

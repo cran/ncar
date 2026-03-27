@@ -10,9 +10,9 @@ txtNCA(x, y, dose = 0, adm = "Extravascular", dur = 0, doseUnit = "mg",
 \arguments{
   \item{x}{usually time}
   \item{y}{usually concentration}
-  \item{dose}{given amount}
+  \item{dose}{given amount, a scalar}
   \item{adm}{one of \code{"Bolus"} or \code{"Infusion"} or \code{"Extravascular"} to indicate drug administration mode}
-  \item{dur}{duration of infusion}
+  \item{dur}{duration of infusion, a scalar}
   \item{doseUnit}{unit of dose}
   \item{timeUnit}{unit of time}
   \item{concUnit}{unit of concentration}

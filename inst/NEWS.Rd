@@ -1,5 +1,11 @@
 \name{NEWS}
 \title{News for Package \pkg{ncar}}
+\section{Changes in version 0.5.1 (2026-03-27)}{
+  \itemize{
+    \item{pdfNCA and rtfNCA support vector input for dur argument.}
+    \item{Four errata fixed.}
+  }
+}
 \section{Changes in version 0.5.0 (2023-11-11)}{
   \itemize{
     \item{SS option for steady-state added in txtNCA, pdfNCA and rtfNCA.}
