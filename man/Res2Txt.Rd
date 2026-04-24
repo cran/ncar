@@ -26,7 +26,7 @@ Res2Txt(ResNCA, x, y, dose = 0, adm = "Extravascular", dur = 0, doseUnit = "mg",
 \examples{
 x = Theoph[Theoph$Subject=="1","Time"]
 y = Theoph[Theoph$Subject=="1","conc"]
-z = sNCA(x, y, dose=320, doseUnit="mg", concUnit="mg/L", timeUnit="h")
+z = NonCompart::sNCA(x, y, dose=320, doseUnit="mg", concUnit="mg/L", timeUnit="h")
 Res2Txt(z, x, y)  
 }
 \keyword{Output Form}

@@ -1,8 +1,8 @@
-pdfNCA = function(fileName="Temp-NCA.pdf", concData, key = "Subject", 
-                  colTime="Time", colConc="conc", dose=0, adm="Extravascular", 
-                  dur=0, doseUnit="mg", timeUnit="h", concUnit="ug/L", 
-                  down="Linear", R2ADJ=0, MW=0, SS=FALSE, iAUC="", 
-                  excludeDelta=1)
+pdfNCA = function(fileName="Temp-NCA.pdf", concData, key = "Subject",
+                  colTime="Time", colConc="conc", dose=0, adm="Extravascular",
+                  dur=0, doseUnit="mg", timeUnit="h", concUnit="ug/L",
+                  down="Linear", R2ADJ=0, MW=0, SS=FALSE, iAUC="",
+                  excludeDelta=1, UsePoints=NULL)
 {
   class(concData) = "data.frame"
   defPar = par(no.readonly=TRUE)
@@ -31,22 +31,30 @@ pdfNCA = function(fileName="Temp-NCA.pdf", concData, key = "Subject",
     stop("Count of dur does not match with number of NCAs!")
   }
 
+  if (!is.null(UsePoints)) {
+    if (length(UsePoints) != nID) stop("Length of UsePoints does not match the number of NCAs!")
+    R2ADJ = 0 # suppress R2ADJ option when used with UsePoints
+  }
+
   Res = vector()
   for (i in 1:nID) {
     strHeader = paste0(key[1], "=", IDs[i, 1])
-    strCond = paste0("concData[concData$", key[1], "=='", IDs[i, 1], "'")
+    tData = concData[concData[[key[1]]] == IDs[i, 1], , drop=FALSE]
     if (nKey > 1) {
       for (j in 2:nKey) {
-        strCond = paste0(strCond, " & concData$", key[j], "=='", IDs[i,j], "'")
-        strHeader = paste0(strHeader, ", ", key[j], "=", IDs[i,j])
+        strHeader = paste0(strHeader, ", ", key[j], "=", IDs[i, j])
+        tData = tData[tData[[key[j]]] == IDs[i, j], , drop=FALSE]
       }
     }
-    strCond = paste0(strCond, ",]")
-    tData = eval(parse(text=strCond))
     if (nrow(tData) > 0) {
+      if (!is.null(UsePoints)) {
+        tUse = UsePoints[[i]]
+      } else {
+        tUse = NULL
+      }
       x = tData[, colTime]
       y = tData[, colConc]
-      tabRes = sNCA(x, y, dose=dose[i], adm=adm, dur=dur[i], doseUnit=doseUnit, timeUnit=timeUnit, concUnit=concUnit, down=down, R2ADJ=R2ADJ, MW=MW, SS=SS, iAUC=iAUC, Keystring=strHeader, excludeDelta=excludeDelta)
+      tabRes = sNCA(x, y, dose=dose[i], adm=adm, dur=dur[i], doseUnit=doseUnit, timeUnit=timeUnit, concUnit=concUnit, down=down, R2ADJ=R2ADJ, MW=MW, SS=SS, iAUC=iAUC, Keystring=strHeader, excludeDelta=excludeDelta, UsePoints=tUse)
       UsedPoints = attr(tabRes, "UsedPoints")
       txtRes = Res2Txt(tabRes, x, y, dose=dose[i], adm=adm, dur=dur[i], doseUnit=doseUnit, down=down)
       Res = c(Res, txtRes)
@@ -72,7 +80,7 @@ pdfNCA = function(fileName="Temp-NCA.pdf", concData, key = "Subject",
       par(oma=c(1,1,1,1), mar=c(4,4,3,1), adj=0.5)
       x0 = x[!is.na(y) & y > 0]
       y0 = y[!is.na(y) & y > 0]
-      if (length(x0) > 0) { 
+      if (length(x0) > 0) {
         plot(x0, log10(y0), type="b", cex=0.7, xlim=c(0, maxx), ylim=c(log10(miny), log10(maxy)), yaxt="n", xlab=paste0("Time (", timeUnit, ")"), ylab=paste0("Concentration (log interval) (", concUnit, ")"))
         points(x[UsedPoints], log10(y[UsedPoints]), pch=16)
         yticks = seq(round(min(log10(y0))), ceiling(max(log10(y0))))
@@ -81,8 +89,8 @@ pdfNCA = function(fileName="Temp-NCA.pdf", concData, key = "Subject",
         x1 = tabRes["LAMZLL"]
         x2 = tabRes["LAMZUL"]
         deltaX = x1 * 0.05
-        y1 = log10(2.718281828)*(tabRes["b0"] - tabRes["LAMZ"] * (x1 - deltaX))
-        y2 = log10(2.718281828)*(tabRes["b0"] - tabRes["LAMZ"] * (x2 + deltaX))
+        y1 = log10(exp(1))*(tabRes["b0"] - tabRes["LAMZ"] * (x1 - deltaX))
+        y2 = log10(exp(1))*(tabRes["b0"] - tabRes["LAMZ"] * (x2 + deltaX))
         lines(c(x1 - deltaX, x2 + deltaX), c(y1, y2), lty=2, col="red")
       }
       close.screen(all.screens=TRUE)

@@ -5,7 +5,7 @@
 \usage{
 txtNCA(x, y, dose = 0, adm = "Extravascular", dur = 0, doseUnit = "mg", 
        timeUnit = "h", concUnit = "ug/L", iAUC = "", down="Linear", R2ADJ=0, 
-       MW = 0, SS = FALSE, excludeDelta = 1)
+       MW = 0, SS = FALSE, excludeDelta = 1, UsePoints = NULL)
 }
 \arguments{
   \item{x}{usually time}
@@ -22,6 +22,7 @@ txtNCA(x, y, dose = 0, adm = "Extravascular", dur = 0, doseUnit = "mg",
   \item{MW}{molecular weight of the drug}
   \item{SS}{if steady-state, this should be TRUE. AUCLST (AUClast) is used instead of AUCIFO (AUCinf) for the calculation of Vz (VZFO, VZO), CL (CLFO, CLO), and Vdss (VSSO).}
   \item{excludeDelta}{Improvement of R2ADJ larger than this value could exclude the last point. Default value 1 is for the compatibility with other software. Author recommends to use \code{excludeDelta} option with about 0.3.}
+  \item{UsePoints}{Indices of points to calculate terminal slope. Vaules of use points should not be zero. Use only when automatic determination is not satisfactory. If this is used, R2ADJ option is ignored.}
 }
 \value{
   \item{CMAX}{maximum concentration, Cmax}

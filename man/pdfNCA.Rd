@@ -6,7 +6,7 @@
 pdfNCA(fileName = "Temp-NCA.pdf", concData, key = "Subject", colTime = "Time", 
        colConc = "conc", dose = 0, adm = "Extravascular", dur = 0, 
        doseUnit = "mg", timeUnit = "h", concUnit = "ug/L", down="Linear", 
-       R2ADJ = 0, MW = 0, SS = FALSE, iAUC = "", excludeDelta = 1)
+       R2ADJ = 0, MW = 0, SS = FALSE, iAUC = "", excludeDelta = 1, UsePoints = NULL)
 }
 \arguments{
   \item{fileName}{file name to save}
@@ -26,6 +26,7 @@ pdfNCA(fileName = "Temp-NCA.pdf", concData, key = "Subject", colTime = "Time",
   \item{SS}{if steady-state, this should be TRUE. AUCLST (AUClast) is used instead of AUCIFO (AUCinf) for the calculation of Vz (VZFO, VZO), CL (CLFO, CLO), and Vdss (VSSO).}
   \item{iAUC}{interval AUC information in a dataframe with "Name", "Start", and "End" columns}
   \item{excludeDelta}{Improvement of R2ADJ larger than this value could exclude the last point. Default value 1 is for the compatibility with other software. Author recommends to use \code{excludeDelta} option with about 0.3.}
+  \item{UsePoints}{A list of length equal to the number of subjects/NCAs. Each element is a vector of indices of points to calculate terminal slope for the corresponding subject. Values of use points should not be zero. Use only when automatic determination is not satisfactory. If this is used, R2ADJ option is ignored.}
 }
 \value{
   \item{CMAX}{maximum concentration, Cmax}

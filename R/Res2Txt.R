@@ -69,7 +69,6 @@ Res2Txt = function(ResNCA, x, y, dose=0, adm="Extravascular", dur=0, doseUnit="m
     yre = NA
   }
  # End Making Summary Table
-  DateTime = strsplit(as.character(Sys.time())," ")[[1]]
 
   Result = vector()
   cLineNo = 1

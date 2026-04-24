@@ -1,6 +1,6 @@
 Package: ncar
-Version: 0.5.1
-Date: 2026-03-27
+Version: 0.6.0
+Date: 2026-04-26
 Title: Noncompartmental Analysis for Pharmacokinetic Report
 Description: Conduct a noncompartmental analysis with industrial strength.
              Some features are
@@ -10,7 +10,8 @@ Description: Conduct a noncompartmental analysis with industrial strength.
              4) Interval(partial) AUCs with 'linear' or 'log' interpolation method
              5) Produce pdf, rtf, text report files.
              * Reference: Gabrielsson J, Weiner D. Pharmacokinetic and Pharmacodynamic Data Analysis - Concepts and Applications. 5th ed. 2016. (ISBN:9198299107).
-Depends: rtf, NonCompart (>= 0.7.0)
+Depends: R (>= 3.5.0)
+Imports: rtf, NonCompart (>= 0.7.0)
 Author: Kyun-Seop Bae [aut, cre]
 Maintainer: Kyun-Seop Bae <k@acr.kr>
 Authors@R: person(given = "Kyun-Seop",
@@ -22,6 +23,6 @@ License: GPL-3
 NeedsCompilation: no
 LazyLoad: yes
 URL: https://cran.r-project.org/package=ncar
-Packaged: 2026-03-27 00:16:55 UTC; Kyun-SeopBae
+Packaged: 2026-04-24 04:11:22 UTC; Kyun-SeopBae
 Repository: CRAN
-Date/Publication: 2026-03-27 00:50:02 UTC
+Date/Publication: 2026-04-24 08:20:02 UTC

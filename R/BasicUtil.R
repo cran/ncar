@@ -70,7 +70,7 @@ Plot4rtf = function(x, y, type, cex, xlim, ylim, xlab, ylab, tabRes)
   x1 = tabRes["LAMZLL"]
   x2 = tabRes["LAMZUL"]
   deltaX = x1 * 0.05
-  y1 = log10(2.718281828)*(tabRes["b0"] - tabRes["LAMZ"] * (x1 - deltaX))
-  y2 = log10(2.718281828)*(tabRes["b0"] - tabRes["LAMZ"] * (x2 + deltaX))
+  y1 = log10(exp(1))*(tabRes["b0"] - tabRes["LAMZ"] * (x1 - deltaX))
+  y2 = log10(exp(1))*(tabRes["b0"] - tabRes["LAMZ"] * (x2 + deltaX))
   lines(c(x1 - deltaX, x2 + deltaX), c(y1, y2), lty=2, col="red")
 }

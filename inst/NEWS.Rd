@@ -1,5 +1,10 @@
 \name{NEWS}
 \title{News for Package \pkg{ncar}}
+\section{Changes in version 0.6.0 (2026-04-26)}{
+  \itemize{
+    \item{txtNCA, pdfNCA, and rtfNCA support indices of points (UsePoints) to calculate terminal slope.}
+  }
+}
 \section{Changes in version 0.5.1 (2026-03-27)}{
   \itemize{
     \item{pdfNCA and rtfNCA support vector input for dur argument.}
