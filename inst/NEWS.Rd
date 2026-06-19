@@ -1,5 +1,10 @@
 \name{NEWS}
 \title{News for Package \pkg{ncar}}
+\section{Changes in version 0.6.1 (2026-06-19)}{
+  \itemize{
+    \item{The dependency on the archived \pkg{rtf} package was removed. The subset of \pkg{rtf} functions required by \code{rtfNCA} is now vendored internally in \file{R/rtf_utils.R} (originally authored by Michael E. Schaffer, GPL (>= 2)).}
+  }
+}
 \section{Changes in version 0.6.0 (2026-04-26)}{
   \itemize{
     \item{txtNCA, pdfNCA, and rtfNCA support indices of points (UsePoints) to calculate terminal slope.}
