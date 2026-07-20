@@ -1,6 +1,6 @@
 Package: ncar
-Version: 0.6.1
-Date: 2026-06-19
+Version: 0.7.0
+Date: 2026-06-20
 Title: Noncompartmental Analysis for Pharmacokinetic Report
 Description: Conduct a noncompartmental analysis with industrial strength.
              Some features are
@@ -9,9 +9,18 @@ Description: Conduct a noncompartmental analysis with industrial strength.
              3) Supporting both 'linear-up linear-down' and 'linear-up log-down' method
              4) Interval(partial) AUCs with 'linear' or 'log' interpolation method
              5) Produce pdf, rtf, text report files.
+             6) Produce Installation and Operational Qualification (IQ/OQ) reports in pdf.
+             After installation, qualify the package in your own environment:
+             run pdfIQ() for Installation Qualification and pdfOQ() for Operational
+             Qualification. Run writeMD5() once after installation so the IQ
+             file-integrity check passes. To approve a report, sign it digitally in
+             Adobe Acrobat Reader (generate with sigField=TRUE, or run addSigField(),
+             to add click-to-sign fields), instead of printing and scanning; or use
+             signPDF()/verifyPDF() for a scriptable signature.
              * Reference: Gabrielsson J, Weiner D. Pharmacokinetic and Pharmacodynamic Data Analysis - Concepts and Applications. 5th ed. 2016. (ISBN:9198299107).
 Depends: R (>= 3.5.0)
-Imports: NonCompart (>= 0.8.0), R.oo, R.methodsS3
+Imports: NonCompart (>= 0.8.0), R.oo, R.methodsS3, tools
+Suggests: openssl
 Author: Kyun-Seop Bae [aut, cre],
   Michael E. Schaffer [ctb, cph] (Original author of the 'rtf' functions
     vendored in R/rtf_utils.R)
@@ -31,6 +40,6 @@ License: GPL-3
 NeedsCompilation: no
 LazyLoad: yes
 URL: https://cran.r-project.org/package=ncar
-Packaged: 2026-06-18 23:50:18 UTC; Kyun-SeopBae
+Packaged: 2026-06-19 23:52:25 UTC; Kyun-SeopBae
 Repository: CRAN
-Date/Publication: 2026-06-19 07:40:02 UTC
+Date/Publication: 2026-07-20 12:20:24 UTC

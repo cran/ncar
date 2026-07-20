@@ -1,5 +1,17 @@
 \name{NEWS}
 \title{News for Package \pkg{ncar}}
+\section{Changes in version 0.7.0 (2026-06-20)}{
+  \itemize{
+    \item{\code{pdfIQ} added: generates a self-contained Installation Qualification (IQ) report in pdf that documents whether \pkg{ncar} and \pkg{NonCompart} are correctly installed, intact, loadable, and operational in the user's R environment (environment, package versions, dependency satisfaction, MD5 file integrity, namespace/exports, a functional NCA check against an external reference, and an overall QUALIFIED/NOT QUALIFIED verdict with a sessionInfo appendix).}
+    \item{\code{pdfOQ} added: generates a self-contained Operational Qualification (OQ) report in pdf. It runs a set of NCA test cases (eight WinNonlin-referenced scenarios shipped in \file{inst/OQ}) through \code{tblNCA} on the user's machine and compares every parameter for every subject to the pre-specified reference within a relative tolerance. The report lists every computed value next to its reference value, the absolute and relative difference, and a pass flag, with an overall QUALIFIED/NOT QUALIFIED verdict.}
+    \item{\code{writeMD5} added: writes the standard R \file{MD5} integrity manifest into an installed package directory (using \code{tools::md5sum}), so that the \code{pdfIQ} file-integrity check reports PASS for local installs. CRAN installs already include this manifest.}
+    \item{\code{pdfPQ} added: a Performance Qualification (PQ) report generator. It runs the analysis the user intends on the user's own data and checks reproducibility, per-profile scientific plausibility, and (optionally) agreement with the user's expected values, with an input-data md5 fingerprint and a signed record.}
+    \item{\code{pdfNCA} now prints \dQuote{Performed by} / \dQuote{Reviewed by} approval lines (and an optional \code{performedBy} name) on the first page.}
+    \item{\code{addSigField} added (and a \code{sigField} argument to \code{pdfIQ}/\code{pdfOQ}/\code{pdfPQ}): insert Adobe Acrobat Reader signature fields into the report PDF (pure base-R PDF incremental update, no external tools) so it can be signed with one click in the free Acrobat Reader, instead of printing and scanning.}
+    \item{\code{signPDF} and \code{verifyPDF} added: digitally sign a report PDF (a detached SHA-256 signature written to \file{<pdf>.sig}, using the \pkg{openssl} package) and verify it, as a scriptable alternative.}
+    \item{The IQ and OQ reports use 1 inch margins on every side, select Letter paper in a United States locale and A4 elsewhere (\code{paper} argument), place the signature/approval page first, and include a per-file md5 checksum appendix (IQ).}
+  }
+}
 \section{Changes in version 0.6.1 (2026-06-19)}{
   \itemize{
     \item{The dependency on the archived \pkg{rtf} package was removed. The subset of \pkg{rtf} functions required by \code{rtfNCA} is now vendored internally in \file{R/rtf_utils.R} (originally authored by Michael E. Schaffer, GPL (>= 2)).}

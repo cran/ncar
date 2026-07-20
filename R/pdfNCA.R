@@ -2,7 +2,7 @@ pdfNCA = function(fileName="Temp-NCA.pdf", concData, key = "Subject",
                   colTime="Time", colConc="conc", dose=0, adm="Extravascular",
                   dur=0, doseUnit="mg", timeUnit="h", concUnit="ug/L",
                   down="Linear", R2ADJ=0, MW=0, SS=FALSE, iAUC="",
-                  excludeDelta=1, UsePoints=NULL)
+                  excludeDelta=1, UsePoints=NULL, performedBy="")
 {
   class(concData) = "data.frame"
   defPar = par(no.readonly=TRUE)
@@ -10,6 +10,13 @@ pdfNCA = function(fileName="Temp-NCA.pdf", concData, key = "Subject",
   PrepPDF(fileName)
   AddPage()
   Text1(1, 1, "Individual Noncompartmental Analysis Result", Cex=1.2)
+  Text1(3, 1, paste0("ncar ", packageVersion("ncar"), "    ", R.version.string), Cex=0.8)
+  Text1(4, 1, paste("Generated:", format(Sys.time(), "%Y-%m-%d %H:%M:%S"), Sys.timezone()), Cex=0.8)
+  if (nzchar(performedBy)) Text1(5, 1, paste("Performed by:", performedBy), Cex=0.8)
+  Text1(7, 1, "Approval", Cex=0.8)
+  Text1(8, 1, paste(rep("-", 70), collapse=""), Cex=0.8)
+  Text1(10, 1, "Performed by : ______________________________   Date: ____________", Cex=0.8)
+  Text1(12, 1, "Reviewed by  : ______________________________   Date: ____________", Cex=0.8)
 
   maxx = max(concData[, colTime], na.rm=TRUE)
   maxy = max(concData[, colConc], na.rm=TRUE)
